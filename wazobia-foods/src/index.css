@@ -21,7 +21,7 @@
 /* Remove default margin */
 * {
   margin: 0;
-  overflow: hidden;
+  /* overflow-x: hidden; */
   font-size: 62.5%; /* 1rem = 10px*/
 }
 

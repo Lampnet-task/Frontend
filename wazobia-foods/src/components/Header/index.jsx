@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CiShoppingCart } from "react-icons/ci";
 import logo from "../../assets/ep_food.png"
 import NavItems from './NavItems';
@@ -6,15 +6,32 @@ import styles from "./styles.module.css";
 
 const index = () => {
     const [show, setShow] = useState(false);
+    const [background, setBackground] = useState(false)
 
     // show dropdown
     const showNavBar = () => {
         setShow(!show)
     }
 
+    useEffect(() => {
 
+        const scrollFunction = () => {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            setBackground(true)
+        } else {
+            setBackground(false)
+        }
+        };
+
+        window.addEventListener('scroll', scrollFunction);
+
+        // Cleanup function to remove the event listener when the component unmounts
+        return () => window.removeEventListener('scroll', scrollFunction);
+    }, []); 
+
+    
     return (
-        <nav className="flex justify-between items-center px-4 md:px-24 py-6 border-b text-white">
+        <nav className={`flex justify-between items-center px-4 md:px-24 py-6 text-white z-50 fixed w-full ${background ? "bg-background" : "backdrop-blur"} `}>
             <div>
                 <img src={logo} alt="logo" />
             </div>
@@ -32,7 +49,7 @@ const index = () => {
 
                 <div className="flex gap-2 md:gap-6 items-center">
                     <CiShoppingCart className="h-12 w-12" />
-                    {/* <img src={logo} alt="" /> */}
+                    <img src={logo} alt="" />
                 </div>
 
             </div> 

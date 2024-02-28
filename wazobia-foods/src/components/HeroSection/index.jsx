@@ -3,7 +3,7 @@ import logo from "../../assets/ep_food.png"
 
 const index = () => {
     return (
-        <section className="p-4 md:p-24 gap-20 flex flex-col md:flex-row md:gap-4 items-center relative w-full">
+        <section className="px-4 md:px-24 py-[10rem] gap-20 flex flex-col md:flex-row md:gap-4 items-center relative w-full">
             <div className="absolute rounded-full w-32 h-32 md:w-[10rem] md:h-[10rem] bg-primary -top-10 right-0 "></div>
 
             <div className="text-white md:w-1/2 ">

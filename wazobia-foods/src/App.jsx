@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from "../src/components/Header"
+import Footer from "../src/components/Footer"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <>
             <Header />
             <Outlet />
+            <Footer />
         </>
     )
 }
