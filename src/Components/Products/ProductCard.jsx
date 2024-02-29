@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import Rating from './Rating'; // Import the Ratings component
+import Rating from "./Rating"; // Import the Ratings component
 
 const ProductCard = ({ product }) => {
   if (!product) {
@@ -10,18 +10,18 @@ const ProductCard = ({ product }) => {
   const { title, image, ratings, price } = product;
 
   return (
-    <div className="product-card my-4 relative cursor-pointer pb-3 pt-4 px-2 rounded-lg shadow hover:shadow-slate-50">
-      <div className='cart-icon absolute right-3 bottom-4 hover:text-blue-700 hover:bg-slate-300 rounded-full p-2 text-3xl hidden'>
+    <div className="product-card my-8 relative cursor-pointer py-4 px-1 rounded-3xl shadow hover:shadow-slate-50">
+      <div className='cart-icon absolute right-2 bottom-2 hover:text-blue-700 hover:bg-slate-300 rounded-full p-4 text-4xl hidden'>
         <FaShoppingCart />
       </div>
       <div className="p-2">
         <img src={image} alt={title} className="object-cover h-48 w-full rounded-3xl" />
       </div>
-      <h2 className="font-bold my-1">{title}</h2>
+      <h2 className="font-bold my-2 px-4 text-xl">{title}</h2>
 
 
       <Rating rating={ratings} />
-      <p className="product-price">&#x20A6;{price}</p>
+      <p className="product-price text-xl px-4">&#x20A6;{price}</p>
     </div>
   );
 };

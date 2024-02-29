@@ -18,7 +18,7 @@ function ProductDetails() {
 
   return (
     <div className='detail-page text-white relative'>
-    <div className="back-home absolute">
+    <div className="back-home  mb-2">
     <Link to="/" className='flex gap-2 items-center text-2xl underline hover:text-orange-500'>
       <FaArrowLeft /> Back To Home
     </Link>
@@ -33,10 +33,10 @@ function ProductDetails() {
           <Rating rating={thisProduct.ratings}/>
           <p className="product-price">&#x20A6;{thisProduct.price}</p>
           <div className="cart-btn flex gap-14">
-            <button className="bg-green-700 px-2 py-1 rounded-md hover:bg-slate-400">Add To Cart</button>
-            <button className="bg-orange-500 px-2 py-1 rounded-md hover:bg-slate-400">View Cart</button>
+            <button className="bg-green-700 px-4 py-2 text-lg rounded-md hover:bg-slate-400">Add To Cart</button>
+            <button className="bg-orange-500 px-4 py-2 text-lg rounded-md hover:bg-slate-400">View Cart</button>
           </div>
-          <p className="description">{thisProduct.description}</p>
+          <p className="description text-xl ">{thisProduct.description}</p>
         </div>
       </div>
       <div className="similar-products">
@@ -44,8 +44,8 @@ function ProductDetails() {
             <div className="similar-products-list">
             {similarProducts.map(product => (
             <div key={product.id}>
-            <Link to={`/products/${product.id}`}><ProductCard product={product}/></Link>
-          </div>
+              <Link to={`/products/${product.id}`}><ProductCard product={product}/></Link>
+            </div>
           ))}
               </div>
               </div>

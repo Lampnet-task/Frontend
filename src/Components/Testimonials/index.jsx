@@ -5,12 +5,12 @@ import photo3 from "../../assets/userdp3.png"
 
 const index = () => {
     return (
-        <section className="text-white relative py-12 px-4 md:p-24">
+        <section className="text-white relative py-12 px-4 md:px-24 md:py-16">
             <div className="absolute bg-primary rounded-full w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] right-2 top-[5rem] md:right-[20rem] md:top-[5rem] "></div>
             <div className="absolute bg-primary rounded-full w-[10rem] h-[10rem] md:w-[15rem] md:h-[15rem] left-10 bottom-10 md:left-[20rem] md:bottom-[3rem] "></div>
             
 
-            <h2 className="text-2xl md:text-4xl font-semibold ">What our customers say about us</h2>
+            <h2 className="text-2xl md:text-5xl font-semibold md:text-center ">What our customers say about us</h2>
 
             <div className="p-4 mt-12 md:mt-24 flex flex-col md:items-center md:flex-row gap-24 ">
                 <div className="relative bg-gradient-to-b backdrop-blur rounded-2xl h-fit md:h-[22rem] ">

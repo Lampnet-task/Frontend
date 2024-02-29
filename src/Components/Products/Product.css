@@ -1,5 +1,6 @@
 .product-list, .detail-page {
-  padding: 1rem 4rem;
+  /* padding: 1rem 4rem; */
+  @apply px-8 pt-[8rem] md:px-24 ;
 }
 
 .products, .similar-products-list {
@@ -9,7 +10,8 @@
 }
 
 .product-card, .order-card {
-  background-color: rgba(148, 141, 141, 0.3);
+  /* background-color: rgba(148, 141, 141, 0.3); */
+  @apply bg-gradient-to-b;
 }
 
 .product-card:hover {

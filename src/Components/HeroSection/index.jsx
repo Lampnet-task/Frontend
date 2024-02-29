@@ -3,7 +3,7 @@ import logo from "../../assets/yummy.jpg"
 
 const index = () => {
     return (
-        <section className="px-4 md:px-24 py-[10rem] gap-20 flex flex-col md:flex-row md:gap-4 items-center relative w-full overflow-x-hidden">
+        <section className="px-4 md:px-24 pt-[10rem] pb-12 gap-20 flex flex-col md:flex-row md:gap-4 items-center relative w-full overflow-x-hidden">
             <div className="absolute rounded-full w-32 h-32 md:w-[15rem] md:h-[15rem] bg-primary -top-10 right-0 md:-right-20"></div>
 
             <div className="text-white md:w-1/2 ">
@@ -19,8 +19,8 @@ const index = () => {
             </div>
 
             <div className="relative w-full h-[25rem] md:h-[40rem] md:w-1/2 p-6 ">
-                <div className="absolute backdrop-blur bg-gradient-to-b rounded-3xl w-[25rem] h-[20rem] md:w-[35rem] md:h-[35rem] right-10 top-10 md:right-[5rem] -z-30 "></div>
-                <div className="absolute rounded-full w-32 h-32 md:w-[10rem] md:h-[10rem] bg-primary bottom-0 left-60 -z-50 "></div>
+                <div className="absolute backdrop-blur bg-gradient-to-b rounded-3xl w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] right-10 -top-10 md:top-10 md:right-[5rem] -z-30 "></div>
+                <div className="absolute rounded-full w-32 h-32 md:w-[10rem] md:h-[10rem] bg-primary bottom-0 left-20 md:left-60 -z-50 "></div>
                 
 
                 <div className=""><img src={logo} alt="" className="w-[18rem] h-[18rem] md:w-[30rem] md:h-[30rem] rounded-3xl mx-auto " /></div>

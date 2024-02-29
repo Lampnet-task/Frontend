@@ -55,8 +55,8 @@ const ProductList = () => {
 
   return (
     <div className="product-list text-white">
-      <h1 className='font-bold text-3xl mb-5'>Choose from your favorite category</h1>
-      <div className="category-btn flex justify-around items-center lg:text-2xl md:text-lg">
+      <h1 className='font-bold text-3xl mb-5 md:text-4xl md:mb-12'>Choose from your favorite category</h1>
+      <div className="category-btn flex justify-around items-center text-lg lg:text-2xl md:text-xl md:my-4 ">
         <button className={activeButton === 'All' ? 'active' : ''} onClick={() => handleCategoryClick('All')}>All</button>
         <button className={activeButton === 'soup' ? 'active' : ''} onClick={() => handleCategoryClick('soup')}>Soups</button>
         <button className={activeButton === 'rice' ? 'active' : ''} onClick={() => handleCategoryClick('rice')}>Rice</button>
@@ -75,10 +75,10 @@ const ProductList = () => {
       </div>
       {visibleProducts < shuffledProducts.length ?
         <div className='flex justify-center'>
-          <button className="load-more-button mb-3 py-2 px-3 bg-orange-200 rounded-lg" onClick={loadMoreProducts}>Load More</button>
+          <button className="load-more-button mb-3 py-2 px-4 bg-primary rounded-lg text-xl " onClick={loadMoreProducts}>Load More</button>
         </div> :
         <div className='flex justify-center'>
-          <button className="reset-button load-more-button mb-3 py-2 px-3 bg-orange-200 rounded-lg" onClick={resetProducts}>Show Less</button>
+          <button className="reset-button load-more-button mb-3 py-2 px-4 bg-primary rounded-lg text-xl " onClick={resetProducts}>Show Less</button>
         </div>
       }
     </div>
