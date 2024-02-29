@@ -5,8 +5,8 @@ import ProductList from './Components/Products/ProductList';
 import ProductDetails from './Components/Products/ProductDetails';
 import OrderCart from './Components/Products/OrderCart';
 import { Outlet } from 'react-router-dom'
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
+import Header from "../src/Components/Header"
+import Footer from "../src/Components/Footer"
 
 function App() {
 //   return (

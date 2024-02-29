@@ -1,11 +1,13 @@
 import React from 'react'
-import HeroSection from "../components/HeroSection"
-import Testimonials from "../components/Testimonials"
+import HeroSection from "../Components/HeroSection"
+import Testimonials from "../Components/Testimonials"
+import ProductList from '../Components/Products/ProductList'
 
 const HomeScreen = () => {
     return (
         <>
             <HeroSection />
+            <ProductList />
             <Testimonials />
         </>
     )

@@ -18,6 +18,18 @@ const route = createBrowserRouter([
         {
           path: "/aboutus",
           element: <AboutUsPage />
+        },
+        {
+          path: "/aboutus",
+          element: <AboutUsPage />
+        },
+        {
+          path: "/aboutus",
+          element: <AboutUsPage />
+        },
+        {
+          path: "/aboutus",
+          element: <AboutUsPage />
         }
       ]
     }
@@ -25,6 +37,6 @@ const route = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <App />
+    <RouterProvider router={route} />
   </React.StrictMode>,
 )
