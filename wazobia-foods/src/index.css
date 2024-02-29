@@ -2,21 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@layer base {
+  :root {
+    /* add variables here */
+    --background: #000935;
+    --primary: #79BD03;
+    --link: #97ED01;
+    --to-right-gradient: linear-gradient(90deg, #ffffff44 10%, #ffffff15 100%);
+    --to-bottom-gradient: linear-gradient(180deg, #ffffff25 30%, #ffffff11 100%);
+
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  font-size: 62.5%; /* 1rem = 10px*/
+}
+
+/* Improve text rendering */
+body {
+  background-color: #172554;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-background;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
