@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* add variables here */
+@layer base {
+  :root {
+    /* add variables here */
+    --background: #000935;
+    --primary: #79BD03;
+    --link: #97ED01;
+    --to-right-gradient: linear-gradient(90deg, #ffffff44 10%, #ffffff15 100%);
+    --to-bottom-gradient: linear-gradient(180deg, #ffffff25 30%, #ffffff11 100%);
+
+  }
 }
 
 *, *::before, *::after {
@@ -13,6 +21,7 @@
 /* Remove default margin */
 * {
   margin: 0;
+  font-size: 62.5%; /* 1rem = 10px*/
 }
 
 /* Improve text rendering */
@@ -24,6 +33,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-background;
 }
 
 /* Improve media defaults */
