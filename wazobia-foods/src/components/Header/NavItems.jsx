@@ -11,9 +11,9 @@ const NavItems = ({classname}) => {
             </span>
 
             <ul className="flex flex-col gap-6 md:flex-row font-medium text-6xl">
-                <li><Link to={"#"}>Home</Link></li>
-                <li><Link to={"#"}>Restaurants</Link></li>
-                <li><Link to={"#"}>About Us</Link></li>
+                <li><Link to={"/"} className="hover:text-link focus-within:text-link focus-visible:text-link ">Home</Link></li>
+                <li><Link to={"#"} className="hover:text-link focus-within:text-link focus-visible:text-link">Restaurants</Link></li>
+                <li><Link to={"/aboutus"} className="hover:text-link focus-within:text-link focus-visible:text-link">About Us</Link></li>
             </ul>
 
         </div>

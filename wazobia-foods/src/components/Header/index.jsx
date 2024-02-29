@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { CiShoppingCart } from "react-icons/ci";
 import logo from "../../assets/ep_food.png"
+import photo from "../../assets/userdp5.png"
 import NavItems from './NavItems';
 import styles from "./styles.module.css";
 
@@ -41,15 +42,15 @@ const index = () => {
                     <NavItems 
                         classname={
                             show 
-                            ? `absolute w-full p-4 backdrop-blur-0 bg-primary rounded z-50 left-0 top-32 ${styles.navitem} ${styles.expanded} `
+                            ? `absolute w-full p-4 backdrop-blur bg-primary rounded-2xl z-50 left-0 top-32 ${styles.navitem} ${styles.expanded} `
                             : styles.navitem
                         } 
                     />
                 }
 
                 <div className="flex gap-2 md:gap-6 items-center">
-                    <CiShoppingCart className="h-12 w-12" />
-                    <img src={logo} alt="" />
+                    <CiShoppingCart className="h-12 w-12 hover:text-link focus-within:text-link " />
+                    <img src={photo} alt="photo" className="rounded-full w-[3rem] h-[3rem] " />
                 </div>
 
             </div> 
