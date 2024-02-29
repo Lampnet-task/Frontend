@@ -65,13 +65,13 @@
 
 
 @media only screen and (max-width: 768px) {
-  .product-list {
-    padding: 1rem 2rem;
-  }
+  /* .product-list {
+    padding: 1.5rem 2.5rem;
+  } */
 
   .product-details {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .order-cart {
@@ -95,7 +95,7 @@
 @media only screen and (max-width:500px) {
 
   .order-price, .order-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .order-item {
