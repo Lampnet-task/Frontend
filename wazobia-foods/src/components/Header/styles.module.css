@@ -1,0 +1,43 @@
+.hamburger.active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #F9F5FF;
+}
+
+.navitem {
+    display: none;
+    
+}
+
+.navitem.expanded {
+    display: block;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .hamburger {
+        display: none;
+    }
+
+    .navitem {
+        display: flex;
+        @apply bg-transparent
+        ;
+    }
+
+}
