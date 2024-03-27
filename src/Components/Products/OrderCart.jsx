@@ -18,6 +18,11 @@ function Cart() {
         }
     }, [cart]);
 
+    //Function to handle chckout
+    function handleCheckout() {
+        alert(`Thank you for your patronage! The total cost of your order is '₦${totalCart}`);
+    }
+
     // JSX to render the shopping cart
     return (
         <div className='pt-[150px] px-3 pb-3 min-h-[80vh] lg:w-3/4 mx-auto'>
@@ -41,6 +46,7 @@ function Cart() {
                                 <span className="font-bold text-2xl">Total Amount: </span>
                                 <span className="text-2xl">&#8358;{totalCart}</span>
                             </p>
+                            <button onClick={handleCheckout} className="bg-green-600 text-3xl p-2 rounded-lg mt-4">Checkout</button>
                         </div>
                     </div>
                 </>
@@ -50,7 +56,7 @@ function Cart() {
                     <h2 className="font-bold text-4xl text-center">Your cart is empty!</h2>
                     <div className="text-center">
                         <Link to='/'>
-                            <button className="uppercase bg-green-600 hover:bg-[#ff6347] rounded-lg text-2xl p-2 text-white">Shop now</button>
+                            <button onClick={handleCheckout} className="uppercase bg-green-600 hover:bg-[#ff6347] rounded-lg text-2xl p-2 text-white">Shop now</button>
                         </Link>
                     </div>
                 </div>
