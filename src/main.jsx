@@ -1,35 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import HomeScreen from './pages/HomeScreen.jsx'
-import AboutUsPage from './pages/AboutUsPage.jsx'
-import ProductDetails from './Components/Products/ProductDetails.jsx'
-
-const route = createBrowserRouter([
-    {
-      path: "/",
-      element:  <App />,
-      children: [
-        {
-          path: "/",
-          element: <HomeScreen />,
-        },
-        {
-          path: "/aboutus",
-          element: <AboutUsPage />
-        },
-        {
-          path: "/products/:productId",
-          element: <ProductDetails />
-        },
-      ]
-    }
-])
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { Provider } from 'react-redux';
+import App from './App.jsx';
+import './index.css';
+import HomeScreen from './pages/HomeScreen.jsx';
+import AboutUsPage from './pages/AboutUsPage.jsx';
+import ProductDetails from './Components/Products/ProductDetails.jsx';
+import store from './Components/Products/store/store.js';
+import OrderCart from './Components/Products/OrderCart.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={route} />
-  </React.StrictMode>,
-)
+  <Provider store={store}>
+    <Router>
+      <Routes> {/* corrected component */}
+        <Route path="/" element={<App />}>
+          <Route index element={<HomeScreen />} />
+          <Route path="aboutus" element={<AboutUsPage />} />
+          <Route path="products/:productId" element={<ProductDetails />} />
+          <Route path='/cart' element={<OrderCart />} />
+        </Route>
+      </Routes>
+    </Router>
+  </Provider>
+);

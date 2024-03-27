@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 
 const NavItems = ({classname}) => {
     return (
-        <div className={`md:flex gap-16 items-center ${classname}`}>
+        <div className={`md:flex items-center ${classname}`}>
             <span className="flex justify-between gap-4 border items-center p-4 rounded-3xl text-3xl backdrop-blur bg-gradient-to-r ">
                 <input type="search" placeholder="Search here..." className="bg-transparent outline-0 text-white "/>
                 <CiSearch className="h-8 w-8"/>

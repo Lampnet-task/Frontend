@@ -4,10 +4,14 @@ import logo from "../../assets/ep_food.png"
 import photo from "../../assets/userdp5.png"
 import NavItems from './NavItems';
 import styles from "./styles.module.css";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const index = () => {
     const [show, setShow] = useState(false);
     const [background, setBackground] = useState(false)
+
+    const { cart } = useSelector(state => state)
 
     // show dropdown
     const showNavBar = () => {
@@ -32,7 +36,7 @@ const index = () => {
 
     
     return (
-        <nav className={`flex justify-between items-center px-4 md:px-24 py-6 text-white z-50 fixed w-full ${background ? "bg-background" : "backdrop-blur"} `}>
+        <nav className={`flex justify-between items-center px-4 md:px-0 py-6 text-white z-50 fixed w-full ${background ? "bg-background" : "backdrop-blur"} `}>
             <div>
                 <img src={logo} alt="logo" />
             </div>
@@ -49,7 +53,13 @@ const index = () => {
                 }
 
                 <div className="flex gap-2 md:gap-6 items-center">
-                    <CiShoppingCart className="h-12 w-12 hover:text-link focus-within:text-link " />
+                    <Link to='/cart'><CiShoppingCart className="h-12 w-12 hover:text-link focus-within:text-link relative" />
+                    {
+                            cart.length ?
+                                <span className="absolute top-[1.4rem] lg:right-[4rem] md:right-[4rem] right-[7.5rem] h-4 w-4 bg-red-700 rounded-full flex justify-center items-center p-[10px] text-xl">{cart.length}</span>
+                                : null
+                        }
+                    </Link>
                     <img src={photo} alt="photo" className="rounded-full w-[3rem] h-[3rem] " />
                 </div>
 

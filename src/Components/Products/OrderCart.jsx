@@ -1,38 +1,59 @@
-import './Product.css';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import CartCard from "./cartCard";
 
-function OrderCart() {
-  return (
-    <>
-      <div className="order-cart relative text-white">
-        <p className='my-4'>You have 3 items in your cart</p>
-        <div className="order-card rounded-lg">
-          <div className="order-item my-6 py-3 px-2">
-            <div className="order-image w-3/4">
-              <img src="https://img-global.cpcdn.com/recipes/d2d38dd16f4ad79d/680x482cq70/porridge-beans-and-fried-plantain-recipe-main-photo.webp" alt="" className="object-cover rounded-lg" />
-            </div>
-            <div className="order-details flex justify-between items-center gap-3">
-              <h3 className="order-title font-bold">Fried Plantain with grilled fish</h3>
-              <div className="order-btn flex">
-                <button className="add bg-green-500 rounded-l-md">+</button>
-                <button className="number bg-orange-50 text-black">2</button>
-                <button className="minus bg-green-500 rounded-r-md">-</button>
-              </div>
-              <p className="order-price">&#x20A6;1200</p>
-              <button className="remove bg-red-400 rounded-lg">X</button>
-            </div>
-          </div>
+function Cart() {
+    const [totalCart, setTotalCart] = useState(0);
+    const { cart } = useSelector(state => state);
 
-          <div className="total-area relative">
-            <div className="cart-total flex justify-between items-center bg-black px-2 py-4 rounded-lg">
-              <p>Total</p>
-              <p>&#x20A6;1200</p>
-            <button className='bg-blue-700 p-2 rounded-l-lg'>PROCEED TO CHECKOUT</button>
-            </div>
+    useEffect(() => {
+        if (cart && cart.length > 0) {
+            const totalPrice = cart.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0); 
+            setTotalCart(totalPrice);
+        } else {
+            setTotalCart(0);
+        }
+    }, [cart]);
+
+    return (
+        <div className='pt-[150px] px-3 pb-3 min-h-[80vh] lg:w-3/4 mx-auto'>
+          <div className={`${cart && cart.length > 0 ? 'bg-[#161c3b]' : ''} flex flex-col md:flex-row lg:flex-row lg:justify-between px-8 py-24 rounded-2xl text-white`}>
+            
+          {cart && cart.length > 0 ? (
+                <>
+                    <div className="">
+                        <div className="w-full">
+                            {cart.map((item, index) => <CartCard key={index} item={item} />)}
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex flex-col justify-center items-end p-5">
+                            <h2 className="font-bold text-4xl text-cyan-400">Cart Summary</h2>
+                            <p>
+                                <span className="font-bold text-2xl">Total Item: </span>
+                                <span className="text-2xl">{cart.length}</span>
+                            </p>
+                            <p>
+                                <span className="font-bold text-2xl">Total Amount: </span>
+                                <span className="text-2xl">&#8358;{totalCart}</span>
+                            </p>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div className="flex flex-col gap-4 absolute right-1/2 transform translate-x-1/2 h-screen">
+                    <h2 className="font-bold text-4xl text-center">Your cart is empty!</h2>
+                    <div className="text-center">
+                    <Link to='/'>
+                        <button className="uppercase bg-green-600 hover:bg-[#ff6347] rounded-lg text-2xl p-2 text-white">Shop now</button>
+                    </Link>
+                    </div>
+                </div>
+            )}
           </div>
         </div>
-      </div>
-    </>
-  );
+    );
 }
 
-export default OrderCart;
+export default Cart;

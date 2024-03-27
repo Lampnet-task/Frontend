@@ -8,7 +8,7 @@ const ProductList = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [visibleProducts, setVisibleProducts] = useState(window.innerWidth > 768 ? 10 : 6);
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activeButton, setActiveButton] = useState('All'); // New state to track active button
+  const [activeButton, setActiveButton] = useState('All');
   const [shuffledProducts, setShuffledProducts] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ProductList = () => {
     };
 
     shuffleProducts();
-  }, [selectedCategory]); 
+  }, [selectedCategory]);
 
   const loadMoreProducts = () => {
     setVisibleProducts(prevVisibleProducts => prevVisibleProducts + getVisibleIncrement());
@@ -27,11 +27,11 @@ const ProductList = () => {
   const resetProducts = () => {
     setVisibleProducts(getVisibleIncrement());
   };
-  
+
   const getVisibleIncrement = () => {
-    return windowWidth > 768 ? 10 : 6; 
+    return windowWidth > 768 ? 10 : 6;
   };
-  
+
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -45,7 +45,7 @@ const ProductList = () => {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    setActiveButton(category); // Update active button when category is clicked
+    setActiveButton(category); 
     resetProducts();
   };
 
@@ -68,7 +68,7 @@ const ProductList = () => {
         {productsToShow.map(product => {
           return (
             <div key={product.id}>
-              <Link to={`/products/${product.id}`}><ProductCard product={product}/></Link>
+              <ProductCard product={product} />
             </div>
           )
         })}

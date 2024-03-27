@@ -15,7 +15,7 @@ const index = () => {
                     vero veritatis necessitatibus unde reiciendis recusandae laudantium eveniet vitae. Laboriosam, fuga ab.
                 </p>
 
-                <button className="bg-primary mt-4 md:mt-12 rounded-full py-2 md:py-4 px-4 md:px-12 text-xl md:text-3xl font-semibold ">Order Now</button>
+                <button className="bg-primary mt-6 md:mt-12 rounded-full py-2 md:py-4 px-4 md:px-12 text-xl md:text-3xl font-semibold ">Order Now</button>
             </div>
 
             <div className="relative w-full h-[25rem] md:h-[40rem] md:w-1/2 p-6 ">
