@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
   }
 
   // Destructure product properties
-  const { title, image, ratings, price, id } = product;
+  const { title, image, description, ratings, price, id } = product;
 
   // Function to generate star rating icons based on given rating
   function starRating(stars) {
@@ -53,6 +53,8 @@ const ProductCard = ({ product }) => {
       </div>
       {/* Product title */}
       <h2 className="font-bold my-2 px-4 text-3xl text-cyan-400">{title}</h2>
+      {/* Product description */}
+      <h3 className='text-2xl mb-3'>{description.length > 40 ? description.slice(0, 60).concat('...') : description}</h3>
       {/* Star ratings */}
       <div className="flex">{starRating(ratings)}</div>
       {/* Product price */}
