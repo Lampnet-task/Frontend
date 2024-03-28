@@ -51,7 +51,7 @@ function ProductDetails() {
       <div className="product-details mt-8">
         {/* Product image */}
         <div className="product-image flex items-center justify-center">
-          <img src={thisProduct.image} alt={thisProduct.title} className='w-full lg:w-3/4 object-cover rounded-3xl md:w-full'/>
+          <img src={thisProduct.image} alt={thisProduct.title} className='w-full md:w-2/3 object-cover rounded-3xl'/>
         </div>
         {/* Product information */}
         <div className="product-info text-2xl">

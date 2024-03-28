@@ -56,7 +56,7 @@ function Cart() {
                     <h2 className="font-bold text-4xl text-center">Your cart is empty!</h2>
                     <div className="text-center">
                         <Link to='/'>
-                            <button onClick={handleCheckout} className="uppercase bg-green-600 hover:bg-[#ff6347] rounded-lg text-2xl p-2 text-white">Shop now</button>
+                            <button className="uppercase bg-green-600 hover:bg-[#ff6347] rounded-lg text-2xl p-2 text-white">Shop now</button>
                         </Link>
                     </div>
                 </div>

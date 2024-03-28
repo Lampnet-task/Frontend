@@ -52,9 +52,9 @@ const ProductCard = ({ product }) => {
         </Link>
       </div>
       {/* Product title */}
-      <h2 className="font-bold my-2 px-4 text-3xl text-cyan-400">{title}</h2>
+      <h2 className="font-bold my-2 px-4 lg:text-3xl md:text-3xl text-2xl text-cyan-400">{title}</h2>
       {/* Product description */}
-      <h3 className='text-2xl mb-3'>{description.length > 80 ? description.slice(0, 80).concat('...') : description}</h3>
+      <h3 className='text-xl lg:text-2xl md:text-2xl mb-3'>{description.length > 80 ? description.slice(0, 80).concat('...') : description}</h3>
       {/* Star ratings */}
       <div className="flex">{starRating(ratings)}</div>
       {/* Product price */}
