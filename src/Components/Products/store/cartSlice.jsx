@@ -1,7 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Function to load cart items from local storage
+const loadCartFromLocalStorage = () => {
+    const cartItems = localStorage.getItem('cart');
+    return cartItems ? JSON.parse(cartItems) : [];
+};
+
 // Initial state for the cart
-const initialState = [];
+const initialState = loadCartFromLocalStorage();
 
 // Slice for managing the cart state
 const cartSlice = createSlice({
@@ -17,10 +23,16 @@ const cartSlice = createSlice({
             } else {
                 state.push({ ...action.payload, quantity: 1 });
             }
+            // Store the updated cart items in local storage
+            localStorage.setItem('cart', JSON.stringify(state));
         },
         // Action to remove an item from the cart
         removeFromCart(state, action) {
-            return state.filter(item => item.id !== action.payload);
+            const itemId = action.payload;
+            const updatedCart = state.filter(item => item.id !== itemId);
+            state.splice(0, state.length, ...updatedCart); // Update state immutably
+            // Update local storage
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
         },
         // Action to increment the quantity of an item in the cart
         incrementQuantity(state, action) {
@@ -29,6 +41,8 @@ const cartSlice = createSlice({
             if (itemToUpdate) {
                 itemToUpdate.quantity++;
             }
+            // Store the updated cart items in local storage
+            localStorage.setItem('cart', JSON.stringify(state));
         },
         // Action to decrement the quantity of an item in the cart
         decrementQuantity(state, action) {
@@ -37,6 +51,8 @@ const cartSlice = createSlice({
             if (itemToUpdate && itemToUpdate.quantity > 1) {
                 itemToUpdate.quantity--;
             }
+            // Store the updated cart items in local storage
+            localStorage.setItem('cart', JSON.stringify(state));
         }
     }
 });
