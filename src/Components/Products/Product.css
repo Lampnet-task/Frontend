@@ -47,6 +47,11 @@
   gap: 0.7rem;
 }
 
+.cart-image {
+  width: 70px;
+  height: 70px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .product-list {
@@ -70,6 +75,12 @@
   .similar-products-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .cart-image {
+    width: 40px;
+    height: 40px;
+  }
+  
 }
 
 @media only screen and (max-width:250px) {

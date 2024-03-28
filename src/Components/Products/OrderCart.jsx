@@ -25,8 +25,8 @@ function Cart() {
 
     // JSX to render the shopping cart
     return (
-        <div className='pt-[150px] px-3 pb-3 min-h-[80vh] lg:w-3/4 mx-auto'>
-          <div className={`${cart && cart.length > 0 ? 'bg-[#161c3b]' : ''} flex flex-col md:flex-row lg:flex-row lg:justify-between px-8 py-24 rounded-2xl text-white`}>
+        <div className='pt-[150px] px-0 pb-3 min-h-[80vh] w-full lg:w-3/4 mx-auto'>
+          <div className={`${cart && cart.length > 0 ? 'bg-[#161c3b]' : ''} flex flex-col md:flex-row lg:flex-row lg:justify-between px-1 lg:px-8 md:px-6 py-24 rounded-2xl text-white`}>
             {/* If cart is not empty, render cart items and summary */}
             {cart && cart.length > 0 ? (
                 <>
